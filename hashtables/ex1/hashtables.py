@@ -61,6 +61,9 @@ def hash_table_remove(hash_table, key):
 
     current_pair = hash_table.storage[index]
     last_pair = None
+    
+    if not current_pair:
+        print("value isnt there")
 
     while current_pair is not None and current_pair.key != key:
         last_pair = current_pair
@@ -89,6 +92,7 @@ def hash_table_retrieve(hash_table, key):
         if(current_pair.key == key):
             return current_pair.value
         current_pair = current_pair.next
+    return None
 
 
 # '''
